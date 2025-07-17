@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +10,8 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f3f4f6; /* Light gray background */
+            background-color: #1a202c; /* Dark gray/nearly black background */
+            color: #e2e8f0; /* Light gray text for general body */
         }
         .workflow-card {
             background-color: white;
@@ -29,194 +28,192 @@
             display: flex;
             align-items: flex-start;
             margin-bottom: 0.75rem;
+            font-size: 0.95rem;
+            color: #4b5563; /* Darker gray for text, good on white card */
         }
         .step-item svg {
             flex-shrink: 0;
             margin-right: 0.75rem;
             color: #4f46e5; /* Indigo color for icons */
         }
+        /* Adjusted text color for titles within cards to be dark on white background */
+        .workflow-card h2 {
+            color: #1a202c; /* Dark text for card titles */
+        }
+        /* Adjusted text color for the main title to be light on dark background */
+        h1 {
+            color: #e2e8f0; /* Light text for main title */
+        }
+
+        /* Responsive adjustments */
+        @media (min-width: 768px) {
+            .workflow-container {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+            .workflow-card {
+                max-width: none; /* Allow cards to fill grid column */
+            }
+        }
+        @media (min-width: 1024px) {
+            .workflow-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
     </style>
 </head>
 <body class="p-4 sm:p-8">
     <div class="max-w-6xl mx-auto">
+        <!-- Home Button -->
+        <div class="mb-4">
+            <a href="index.html" class="inline-flex items-center p-3 rounded-full bg-indigo-600 text-white shadow-lg hover:bg-indigo-700 transition-colors duration-200" title="Voltar para a página inicial">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+            </a>
+        </div>
+
         <!-- Main Title -->
-        <h1 class="text-4xl sm:text-5xl font-bold text-center text-gray-800 mb-8 sm:mb-12">
-            LIVE-ACTION COMMERCIALS Workflow
+        <h1 class="text-4xl sm:text-5xl font-bold text-center mb-8 sm:mb-12">
+            LIVE-ACTION COMMERCIALS WORKFLOW
         </h1>
 
-        <!-- Workflow Phases Container -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Workflow Phases Container (now a grid) -->
+        <div class="workflow-container">
 
             <!-- Phase 1: Brief & Proposal -->
             <div class="workflow-card">
-                <h2 class="text-2xl font-semibold text-gray-900 mb-4 flex items-center">
+                <h2 class="text-2xl font-semibold mb-4 flex items-center uppercase">
                     <!-- Icon for Brief & Proposal -->
                     <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>
-                    1. Brief & Proposal
+                    1. BRIEF & PROPOSAL
                 </h2>
                 <ul>
                     <li class="step-item">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        Receive briefing from client
+                        Receive client briefing and clarify needs
                     </li>
                     <li class="step-item">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        Internal scope definition
+                        Define project scope, timelines, and budget
                     </li>
                     <li class="step-item">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        Budget & schedule estimation
-                    </li>
-                    <li class="step-item">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        Proposal presentation
+                        Send proposal and align expectations
                     </li>
                 </ul>
             </div>
 
             <!-- Phase 2: Creative Development -->
             <div class="workflow-card">
-                <h2 class="text-2xl font-semibold text-gray-900 mb-4 flex items-center">
+                <h2 class="text-2xl font-semibold mb-4 flex items-center uppercase">
                     <!-- Icon for Creative Development -->
                     <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path></svg>
-                    2. Creative Development
+                    2. CREATIVE DEVELOPMENT
                 </h2>
                 <ul>
                     <li class="step-item">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        Creative concepting
+                        Develop concept and creative strategy
                     </li>
                     <li class="step-item">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        Script writing
+                        Scriptwriting, storyboard, moodboard
                     </li>
                     <li class="step-item">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        Storyboard
-                    </li>
-                    <li class="step-item">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        Moodboard
-                    </li>
-                    <li class="step-item">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        Casting references
+                        Present visual and narrative direction
                     </li>
                 </ul>
             </div>
 
             <!-- Phase 3: Pre-production -->
             <div class="workflow-card">
-                <h2 class="text-2xl font-semibold text-gray-900 mb-4 flex items-center">
+                <h2 class="text-2xl font-semibold mb-4 flex items-center uppercase">
                     <!-- Icon for Pre-production -->
-                    <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.942 3.331.83 2.864 2.334a1.724 1.724 0 00.009 2.518c1.543.942-3.331.83-2.864 2.334a1.724 1.724 0 00-.009 2.518c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.942-3.331-.83-2.864-2.334a1.724 1.724 0 00-.009-2.518c-1.543-.942 3.331-.83 2.864-2.334a1.724 1.724 0 00.009-2.518z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                    3. Pre-production
+                    <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.942 3.331.83 2.864 2.334a1.724 1.724 0 00.009 2.518c1.543.942-3.331.83-2.864 2.334a1.724 1.724 0 00-.009 2.518c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.942-3.331-.83-2.864-2.334a1.724 1.724 0 00.009-2.518z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                    3. PRE-PRODUCTION
                 </h2>
                 <ul>
                     <li class="step-item">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        Casting & location scouting
+                        Cast selection and location scouting
                     </li>
                     <li class="step-item">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        Art direction / wardrobe planning
+                        Art direction, wardrobe, props
                     </li>
                     <li class="step-item">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        Tech scout / equipment definition
-                    </li>
-                    <li class="step-item">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        Shooting board & call sheet
-                    </li>
-                    <li class="step-item">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        Insurance / contracts / release forms
+                        Schedule, permits, contracts and tech prep
                     </li>
                 </ul>
             </div>
 
             <!-- Phase 4: Production -->
             <div class="workflow-card">
-                <h2 class="text-2xl font-semibold text-gray-900 mb-4 flex items-center">
+                <h2 class="text-2xl font-semibold mb-4 flex items-center uppercase">
                     <!-- Icon for Production -->
                     <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
-                    4. Production
+                    4. PRODUCTION
                 </h2>
                 <ul>
                     <li class="step-item">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        Filming (1–3 days typically)
+                        Filming days with full crew and talent
                     </li>
                     <li class="step-item">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        Director + DOP + cast + crew
+                        Execute the creative plan on set
                     </li>
                     <li class="step-item">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        BTS capture (optional)
+                        Capture optional BTS or social content
                     </li>
                 </ul>
             </div>
 
             <!-- Phase 5: Post-production -->
             <div class="workflow-card">
-                <h2 class="text-2xl font-semibold text-gray-900 mb-4 flex items-center">
+                <h2 class="text-2xl font-semibold mb-4 flex items-center uppercase">
                     <!-- Icon for Post-production -->
                     <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 4v16M17 4v16M3 8h4m6 0h4M3 12h18M3 16h4m6 0h4M17 4h3a2 2 0 012 2v10a2 2 0 01-2 2h-3"></path></svg>
-                    5. Post-production
+                    5. POST-PRODUCTION
                 </h2>
                 <ul>
                     <li class="step-item">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        Offline edit
+                        Edit offline and online versions
                     </li>
                     <li class="step-item">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        Music + VO + sound design
+                        Color grading, sound design, music/VO
                     </li>
                     <li class="step-item">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        VFX / motion graphics
-                    </li>
-                    <li class="step-item">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        Color grading
-                    </li>
-                    <li class="step-item">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        Final master creation
+                        Apply motion graphics and VFX (if needed)
                     </li>
                 </ul>
             </div>
 
             <!-- Phase 6: Delivery & Licensing -->
             <div class="workflow-card">
-                <h2 class="text-2xl font-semibold text-gray-900 mb-4 flex items-center">
+                <h2 class="text-2xl font-semibold mb-4 flex items-center uppercase">
                     <!-- Icon for Delivery & Licensing -->
                     <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 4H6a2 2 0 00-2 2v12a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-2m-4-1v8m0-8V4m0 8v8m0-8H8m0 0h8m-9 8h9"></path></svg>
-                    6. Delivery & Licensing
+                    6. DELIVERY & LICENSING
                 </h2>
                 <ul>
                     <li class="step-item">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        Export masters in required formats
+                        Export masters (ProRes, H264, social cuts)
                     </li>
                     <li class="step-item">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        Upload to secure folder (Dropbox)
+                        Deliver via secure link (Dropbox, etc.)
                     </li>
                     <li class="step-item">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        Licensing contract sent & signed
-                    </li>
-                    <li class="step-item">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        Backup for 1 year
-                    </li>
-                    <li class="step-item">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        Optional renewal or extensions
+                        Manage licensing rights, backup and renewals
                     </li>
                 </ul>
             </div>
@@ -225,4 +222,3 @@
     </div>
 </body>
 </html>
-
